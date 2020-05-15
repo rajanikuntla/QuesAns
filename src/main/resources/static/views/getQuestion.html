@@ -1,21 +1,20 @@
 <div>
 	<div ng-if="!msg">
-		Question:
-		<span>{{ques.question}}</span><br/>
-		Answer:
-		<input type="text" placeholder="Please enter the answer"
-			 ng-model="question.ans" ng-required="required"><br/>
+		Question: <span>{{ques.question}}</span><br /> Answer: <input
+			type="text" placeholder="Please enter the answer" ng-model="ans"
+			ng-required="required"><br />
+
+		<div>
+			<input type="button" ng-click="validate()" value="Validate" />
+		</div>
 	</div>
 
-	<div>
-		<input type="button" ng-click="save()"
-			value="Save" /> 
-	</div>
-	
-	
+
+
+
 	<div ng-if="msg">
 		<span>{{msg}}</span>
-		
+
 	</div>
-	
+
 </div>

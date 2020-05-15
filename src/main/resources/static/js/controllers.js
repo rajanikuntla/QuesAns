@@ -43,20 +43,15 @@ app.controller('getQuestionController', function($http, $scope){
 		});
 	};
 	
-	$scope.save = function() {
-		var ques = $scope.ques;
-		$http({
-			method: 'POST',
-		    url: '/addQuestion',
-		    data: ques,
-		    headers: {
-		        "Content-Type": "application/json"
-		    }
-		}).then(function(response) {
-			if(response.status == 202){
-				$scope.msg ="added successfully";
-			}
-		});
+	$scope.validate = function() {
+		var ans = $scope.ans;
+		var actualAns = $scope.ques.answer;
+		if (ans === actualAns){
+			$scope.msg = "Entered answer is the correct answer"
+		}else {
+			$scope.msg = "Entered answer is the wrong answer"
+		}
+		
 	}
 	$scope.init();
 	

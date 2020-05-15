@@ -18,14 +18,13 @@ public class QuestionController {
 	public QuestionService quesService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/getQuestion")
-	public Question getRandomQuestion() {
+	public Question getRandomQuestion() throws CloneNotSupportedException {
 		Question ques = quesService.getRandomQuestion();
 		return ques;
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/addQuestion", consumes= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String>  addQuestion(@RequestBody Question ques) {
-		System.out.println("entered");
 		quesService.save(ques);
 		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
 	}

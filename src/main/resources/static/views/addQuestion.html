@@ -1,24 +1,20 @@
 <div ng-model="ques">
 	<div ng-if="!msg">
-	Question:
-		<input type="text" placeholder="Please enter a question" id="question"
-			ng-model="ques.question" ng-required="required"><br/>
-	Answer:
-		<input type="text" placeholder="Please enter the answer" id="answer"
-			ng-model="ques.answer" ng-required="required"><br/>
-			
+		Question: <input type="text" placeholder="Please enter a question"
+			id="question" ng-model="ques.question" ng-required="required"><br />
+		Answer: <input type="text" placeholder="Please enter the answer"
+			id="answer" ng-model="ques.answer" ng-required="required"><br />
+
 		<div>
-		<input type="button" ng-click="save()"
-			value="Save" /> 
-	</div>
+			<input type="button" ng-click="save()" value="Save" />
+		</div>
 	</div>
 
-	
-	
+
+
 	<div ng-if="msg">
-		<span>{{msg}}</span>
-		<input type="button" ng-click="next()"
-			value="Next" /> 
+		<span>{{msg}}</span><br> <input type="button" ng-click="next()"
+			value="Next" />
 	</div>
-	
+
 </div>
